@@ -122,6 +122,7 @@
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
 			<version>7.0</version>
 		</dependency>
 		<!-- 导入Mysql数据库链接jar包 -->
@@ -200,6 +201,20 @@
 
 	<build>
 		<finalName>blog-web</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>9090</port>
+					<path>/zkb-web</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>zkb-web</finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 
 

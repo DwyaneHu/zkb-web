@@ -84,4 +84,20 @@
   [INFO] [2016-06-30 21:08:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
   [INFO] [2016-06-30 21:08:42][com.hyh.blog.testMybatis.TestMybatis]{"age":24,"id":1,"password":"sfasgfaf","userName":"测试"}
   [INFO] [2016-06-30 21:08:42][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@26f67b76: startup date [Thu Jun 30 21:08:41 CST 2016]; root of context hierarchy
+  [INFO] [2016-07-20 07:46:51][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2016-07-20 07:46:51][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Wed Jul 20 07:46:51 CST 2016]; root of context hierarchy
+  [INFO] [2016-07-20 07:46:51][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2016-07-20 07:46:51][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2016-07-20 07:46:51][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 794 ms
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Jul 20 07:46:52 CST 2016]; parent: Root WebApplicationContext
+  [INFO] [2016-07-20 07:46:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2016-07-20 07:46:52][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/area/addArea],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.hyh.zkb.controller.AreaController.addArea(java.lang.String,java.lang.Integer,java.lang.Integer)
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/daily/decideLunch],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.hyh.zkb.controller.DailyController.decideTheLunch(org.springframework.ui.Model)
+  [INFO] [2016-07-20 07:46:52][org.springframework.web.servlet.view.velocity.VelocityConfigurer]ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+  [INFO] [2016-07-20 07:46:53][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 983 ms
+  [INFO] [2016-07-20 07:46:55][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Jul 20 07:46:52 CST 2016]; parent: Root WebApplicationContext
+  [INFO] [2016-07-20 07:46:55][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Wed Jul 20 07:46:51 CST 2016]; root of context hierarchy
   
