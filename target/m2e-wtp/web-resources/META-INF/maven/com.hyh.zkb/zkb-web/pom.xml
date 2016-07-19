@@ -128,7 +128,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.30</version>
+			<version>5.1.38</version>
 		</dependency>
 		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
 		<dependency>
@@ -195,11 +195,6 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>com.baidu.unbiz</groupId>
-			<artifactId>common-utils</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 
