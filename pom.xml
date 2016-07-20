@@ -194,13 +194,27 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-
-
 	</dependencies>
 
-
 	<build>
-		<finalName>blog-web</finalName>
+		<finalName>zkb-web</finalName>
+		<resources>
+			<!-- mvn run 的时候找不到很多文件，是因为没有扫描到，在这里配置需要放到里面的文件 -->
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -216,7 +230,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-
 </project>
