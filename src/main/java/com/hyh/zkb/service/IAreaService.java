@@ -8,26 +8,26 @@ public interface IAreaService {
 	
 	int addArea(Area area);
 	
-	void deleteArea(int id);
+	int deleteArea(int id);
 	
 	Area selectAreaById(int id);
 	
 	/**
-	 * 根据id查询父级区域
+	 * 鏍规嵁id鏌ヨ鐖剁骇鍖哄煙
 	 * @param id
 	 * @return
 	 */
 	Area selectParentArea(int id);
 	
 	/**
-	 * 查询指定level的区域
+	 * 鏌ヨ鎸囧畾level鐨勫尯鍩�
 	 * @param level
 	 * @return
 	 */
 	List<Area> selectAreaByLevel(int level);
 	
 	/**
-	 * 查询id的下级区域
+	 * 鏌ヨid鐨勪笅绾у尯鍩�
 	 * @param id
 	 * @return
 	 */

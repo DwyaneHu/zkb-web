@@ -16,33 +16,27 @@ public class AreaServiceImpl implements IAreaService {
 	private AreaMapper areaMapper;
 
 	public int addArea(Area area) {
-		// TODO Auto-generated method stub
 		return areaMapper.insertSelective(area);
 	}
 
-	public void deleteArea(int id) {
-		// TODO Auto-generated method stub
-
+	public int deleteArea(int id) {
+		return areaMapper.deleteByPrimaryKey(id);
 	}
 
 	public Area selectAreaById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return areaMapper.selectByPrimaryKey(id);
 	}
 
 	public Area selectParentArea(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return areaMapper.selectParentArea(id);
 	}
 
 	public List<Area> selectAreaByLevel(int level) {
-		// TODO Auto-generated method stub
-		return null;
+		return areaMapper.selectAreaByLevel(level);
 	}
 
 	public List<Area> selectChildrenArea(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return areaMapper.selectChildrenArea(id);
 	}
 
 }

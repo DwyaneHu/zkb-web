@@ -1,6 +1,8 @@
 package com.hyh.zkb.dao;
 
 
+import java.util.List;
+
 import com.hyh.zkb.model.Area;
 
 public interface AreaMapper {
@@ -15,4 +17,12 @@ public interface AreaMapper {
     int updateByPrimaryKeySelective(Area record);
 
     int updateByPrimaryKey(Area record);
+    
+    Area selectParentArea(Integer id);
+    
+    List<Area> selectAreaByLevel(Integer level);
+    
+    List<Area> selectChildrenArea(Integer id);
+    
+    
 }
