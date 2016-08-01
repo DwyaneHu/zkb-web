@@ -9,6 +9,7 @@ public class Constants {
 	public static final String F_RESULT = "result";
 	public static final String OK = "ok";
 	public static final String FAILED = "failed";
-
+	
+	public static final String INTERNAL_SERVER_ERROR = "Internal Server Error";
 	
 }

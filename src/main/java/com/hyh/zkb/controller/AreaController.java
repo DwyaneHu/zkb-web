@@ -2,7 +2,6 @@ package com.hyh.zkb.controller;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,7 @@ import com.hyh.zkb.service.IAreaService;
 
 @Controller
 @RequestMapping("/area")
-public class AreaController {
+public class AreaController extends BaseController{
 
 	@Autowired
 	IAreaService areaService;
@@ -35,13 +34,13 @@ public class AreaController {
 		area.setLevel(level);
 		area.setParentId(parentId);
 		Integer result = areaService.addArea(area);
-		Map<String, Object> map = new HashMap<>();
+		resMap = new HashMap<>();
 		if (result == 1) {
-			map.put(Constants.F_STATUS, Constants.OK);
+			resMap.put(Constants.F_STATUS, Constants.OK);
 		} else {
-			map.put(Constants.F_STATUS, Constants.FAILED);
+			resMap.put(Constants.F_STATUS, Constants.FAILED);
 		}
-		return JSON.toJSONString(map);
+		return JSON.toJSONString(resMap);
 	}
 
 	@ResponseBody
@@ -50,14 +49,14 @@ public class AreaController {
 	public String selectAreaByLevel(
 			@RequestParam(value = "level", required = false, defaultValue = "2") Integer level) {
 		List<Area> result = areaService.selectAreaByLevel(level);
-		Map<String, Object> map = new HashMap<>();
+		resMap = new HashMap<>();
 		if (result == null || result.size() == 0) {
-			map.put(Constants.F_STATUS, Constants.FAILED);
+			resMap.put(Constants.F_STATUS, Constants.FAILED);
 		} else {
-			map.put(Constants.F_RESULT, Constants.OK);
+			resMap.put(Constants.F_RESULT, Constants.OK);
 		}
-		map.put(Constants.F_RESULT, result);
-		return JSON.toJSONString(map);
+		resMap.put(Constants.F_RESULT, result);
+		return JSON.toJSONString(resMap);
 	}
 
 	@ResponseBody
@@ -65,14 +64,14 @@ public class AreaController {
 	@OperationLogger(id = "areaController.selectParentArea", type = OperationType.SEARCH)
 	public String selectParentArea(@RequestParam(value = "id", required = false, defaultValue = "1") Integer id) {
 		Area result = areaService.selectParentArea(id);
-		Map<String, Object> map = new HashMap<>();
+		resMap = new HashMap<>();
 		if (result == null) {
-			map.put(Constants.F_STATUS, Constants.FAILED);
+			resMap.put(Constants.F_STATUS, Constants.FAILED);
 		} else {
-			map.put(Constants.F_STATUS, Constants.OK);
+			resMap.put(Constants.F_STATUS, Constants.OK);
 		}
-		map.put(Constants.F_RESULT, result);
-		return JSON.toJSONString(map);
+		resMap.put(Constants.F_RESULT, result);
+		return JSON.toJSONString(resMap);
 	}
 
 	@ResponseBody
@@ -80,14 +79,14 @@ public class AreaController {
 	@OperationLogger(id = "areaController.selectChildrenArea", type = OperationType.SEARCH)
 	public String selectChildrenArea(@RequestParam(value = "id", required = false, defaultValue = "1") Integer id) {
 		List<Area> result = areaService.selectChildrenArea(id);
-		Map<String, Object> map = new HashMap<>();
+		resMap = new HashMap<>();
 		if (result == null || result.size() == 0) {
-			map.put(Constants.F_STATUS, Constants.FAILED);
+			resMap.put(Constants.F_STATUS, Constants.FAILED);
 		} else {
-			map.put(Constants.F_STATUS, Constants.OK);
+			resMap.put(Constants.F_STATUS, Constants.OK);
 		}
-		map.put(Constants.F_RESULT, result);
-		return JSON.toJSONString(map);
+		resMap.put(Constants.F_RESULT, result);
+		return JSON.toJSONString(resMap);
 	}
 
 }

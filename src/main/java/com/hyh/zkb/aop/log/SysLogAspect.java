@@ -28,37 +28,30 @@ public class SysLogAspect {
 
 	@Before("controllerAspect()")
 	public void doBefore(JoinPoint joinPoint) {
-		System.out.println("=====SysLogAspect前置通知开始=====");
+		System.out.println("=====SysLogAspectj before=====");
 		handleLog(joinPoint, null);
 	}
 
 	@AfterReturning(pointcut = "controllerAspect()")
 	public void doAfter(JoinPoint joinPoint) {
-		System.out.println("=====SysLogAspect后置通知开始=====");
+		System.out.println("=====SysLogAspect after returning=====");
 		handleLog(joinPoint, null);
 	}
 
 	@AfterThrowing(value = "controllerAspect()", throwing = "e")
 	public void doAfter(JoinPoint joinPoint, Exception e) {
-		System.out.println("=====SysLogAspect异常通知开始=====");
+		System.out.println("=====SysLogAspect do after throwing=====");
 		handleLog(joinPoint, e);
 	}
 
 	private void handleLog(JoinPoint joinPoint, Exception e) {
 		try {
-			//获得注解
 			OperationLogger logger = giveController(joinPoint);
 			if (logger == null) {
 				return;
 			}
-			// 获取目标方法签名  "返回值 全类名.方法名(参数类型)"
 			String signature = joinPoint.getSignature().toString();
-//			System.out.println("==signature:"+signature);
-//			System.out.println("==joinpoint:" + joinPoint.toString());
 			String methodName = signature.substring(signature.lastIndexOf(".")+1, signature.indexOf("("));
-//			String longTemp = joinPoint.getStaticPart().toLongString();
-//			System.out.println(joinPoint.getStaticPart());
-//			System.out.println("==longtemp:"+longTemp);
 			String classType = joinPoint.getTarget().getClass().getName();
 //			System.out.println("==classType:"+classType);
 			Class<?> clazz = Class.forName(classType);
@@ -73,7 +66,7 @@ public class SysLogAspect {
 				}
 			}
 		} catch (Exception exp) {
-			logger.error("异常信息:{}", exp.getMessage());
+			logger.error("error message:{}", exp.getMessage());
 			exp.printStackTrace();
 		}
 
