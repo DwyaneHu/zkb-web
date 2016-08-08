@@ -4,3 +4,4 @@ logs/
 target/
 .settings/
 WebContent/
+.DS_Store

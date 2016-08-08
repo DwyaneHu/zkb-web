@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/daily")
-@ResponseBody
 public class DailyController extends BaseController{
+	
+	
+	@ResponseBody
 	@RequestMapping("/decideLunch")
 	public Map<String,Object> decideTheLunch(Model model){
 		resMap = new HashMap<>();
