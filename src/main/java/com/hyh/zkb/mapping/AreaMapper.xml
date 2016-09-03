@@ -12,7 +12,6 @@
 		a.id, a.name, a.parent_id, a.level, a.del
 	</sql>
 
-
 	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
 		resultMap="BaseResultMap">
 		select
