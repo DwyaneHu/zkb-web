@@ -30,6 +30,7 @@
 		</list> </property> </bean> <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> 
 		<property name="messageConverters"> <list> <ref bean="mappingJacksonHttpMessageConverter" 
 		/> </list> </property> </bean> -->
+	<!-- 配置velocityResolver -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
 		<property name="contentType" value="text/html;charset=UTF-8" />
@@ -50,7 +51,6 @@
 			</props>
 		</property>
 	</bean>
-
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
